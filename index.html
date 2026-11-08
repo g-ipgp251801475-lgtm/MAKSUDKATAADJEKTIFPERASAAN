@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ms"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apa itu Kata Adjektif Perasaan?</title>
+<style>
+:root{--navy:#204D70;--sky:#DFF4FF;--yellow:#FFD45A;--ink:#24445A}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:20px;display:grid;place-items:center;background:linear-gradient(145deg,#D8F1FF,#F5FBFF 55%,#FFF4D4);font-family:"Trebuchet MS",Arial,sans-serif;color:var(--ink)}
+.slide{width:min(1080px,100%);position:relative;overflow:hidden;border:5px solid white;border-radius:28px;background:#F8FCFF;box-shadow:0 18px 45px #204d7020;padding:clamp(22px,5vw,54px)}
+.blob{position:absolute;border-radius:50%;pointer-events:none;opacity:.5}.b1{width:220px;height:220px;background:#B9E8FA;right:-75px;top:-90px}.b2{width:150px;height:150px;background:#FFE49A;left:-65px;bottom:-65px}
+.top{position:relative;z-index:1;display:flex;justify-content:space-between;gap:12px;align-items:center}.tag{background:#E8F7FF;border:1px solid #C5EAF9;border-radius:30px;padding:9px 15px;color:var(--navy);font-size:12px;font-weight:900;letter-spacing:1px}
+h1{position:relative;z-index:1;color:var(--navy);font-size:clamp(30px,5vw,54px);line-height:1.12;margin:30px 0 10px;opacity:0;transform:translateX(45px);animation:slide .8s .2s forwards}
+.sub{color:#64849A;margin:0 0 25px;opacity:0;animation:fade .7s 1s forwards}
+.content{position:relative;z-index:1;background:white;border:2px solid #D9EFF9;border-radius:23px;padding:clamp(20px,3.5vw,34px);box-shadow:0 10px 25px #204d7010;opacity:0;transform:translateY(25px);animation:fade .7s 1.25s forwards}
+.heading{display:flex;align-items:center;gap:12px;margin-bottom:15px}.bulb{width:46px;height:46px;display:grid;place-items:center;background:#FFF3C8;border-radius:14px;font-size:25px;flex:none}h2{margin:0;color:var(--navy);font-size:clamp(20px,3vw,28px)}
+.definition{font-size:clamp(17px,2.3vw,22px);line-height:1.8;font-weight:700;color:#34566D;min-height:5em}.word{display:inline-block;opacity:0;transform:translateY(10px);animation:word .4s ease-out forwards;white-space:pre}
+.emotions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:18px}.emotion{min-width:85px;display:flex;flex-direction:column;align-items:center;gap:5px;background:#F2FAFF;border:1px solid #DCEFF8;border-radius:16px;padding:11px 14px;opacity:0;transform:scale(.65);animation:pop .5s forwards}.emotion:nth-child(2){background:#FFF8E5}.emotion:nth-child(3){background:#FFF0F0}.emotion:nth-child(4){background:#F1F2FF}.emotion:nth-child(5){background:#ECFAF0}.face{font-size:34px}.name{font-size:13px;font-weight:900;color:var(--navy)}
+.emotion:nth-child(1){animation-delay:4.8s}.emotion:nth-child(2){animation-delay:5s}.emotion:nth-child(3){animation-delay:5.2s}.emotion:nth-child(4){animation-delay:5.4s}.emotion:nth-child(5){animation-delay:5.6s}
+.footer{text-align:center;color:#7190A3;font-size:12px;margin-top:20px;opacity:0;animation:fade .6s 5.9s forwards}
+.replay{position:relative;z-index:2;display:block;margin:18px auto 0;border:0;border-radius:30px;padding:10px 16px;background:var(--navy);color:white;font-weight:800;cursor:pointer}
+@keyframes slide{to{opacity:1;transform:translateX(0)}}@keyframes fade{to{opacity:1;transform:translateY(0)}}@keyframes word{to{opacity:1;transform:translateY(0)}}@keyframes pop{to{opacity:1;transform:scale(1)}}
+@media(max-width:600px){body{padding:8px}.slide{padding:20px 16px}.top{align-items:flex-start;flex-direction:column}.content{padding:17px}.definition{min-height:unset}.emotion{min-width:70px;padding:9px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0ms!important}}
+</style></head><body>
+<main class="slide" id="slide"><div class="blob b1"></div><div class="blob b2"></div>
+<div class="top"><div class="tag">📚 BAHASA MELAYU · TAHUN 4</div><div class="tag">JOM BELAJAR</div></div>
+<h1>Apa itu Kata Adjektif Perasaan?</h1><p class="sub">Mari kita fahami maksudnya bersama-sama!</p>
+<section class="content"><div class="heading"><div class="bulb">💡</div><h2>Maksud Kata Adjektif Perasaan</h2></div>
+<div class="definition" id="definition"></div>
+<div class="emotions"><div class="emotion"><span class="face">😰</span><span class="name">Cemas</span></div><div class="emotion"><span class="face">😄</span><span class="name">Lega</span></div><div class="emotion"><span class="face">😟</span><span class="name">Risau</span></div><div class="emotion"><span class="face">😢</span><span class="name">Sedih</span></div><div class="emotion"><span class="face">😨</span><span class="name">Takut</span></div></div></section>
+<div class="footer">✨ Fahami maksudnya, kemudian terokai kad emosi!</div><button class="replay" id="replay">↻ Ulang Animasi</button></main>
+<script>
+const words="Kata adjektif perasaan ialah perkataan yang menerangkan perasaan atau emosi seseorang terhadap sesuatu perkara, keadaan atau situasi.".split(" ");
+function showWords(){const el=document.getElementById("definition");el.innerHTML="";words.forEach((w,i)=>{let s=document.createElement("span");s.className="word";s.textContent=w+(i===words.length-1?"":" ");s.style.animationDelay=(2.05+i*.12)+"s";el.appendChild(s);});}
+function replay(){const els=document.querySelectorAll("h1,.sub,.content,.footer,.emotion");els.forEach(e=>{e.style.animation="none";void e.offsetWidth;e.style.animation="";});showWords();}
+showWords();document.getElementById("replay").addEventListener("click",replay);
+</script></body></html>
